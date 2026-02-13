@@ -10,7 +10,7 @@ const Index = () => {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
-  const hndleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (email) {
       setSubmitted(true);
@@ -24,10 +24,10 @@ const Index = () => {
       <div className="absolute inset-0">
         <img
           src={heroBg}
-          alt="Wine and data analytics visualization"
-          className="w-full h-full object-cover opacity-30"
+          alt="Wine and data analytics visualisation"
+          className="w-full h-full object-cover opacity-100"
         />
-        <div className="absolute inset-0 bg-gradient-dark opacity-60" />
+        <div className="absolute inset-0 bg-gradient-dark opacity-80" />
       </div>
 
       <DataParticles />
@@ -43,8 +43,12 @@ const Index = () => {
         >
           <img
             src={vinalyticsLogo}
-            alt="Vinalytics - Hospitality & Drinks Analytics"
-            className="w-48 h-48 md:w-64 md:h-64 object-contain mx-auto animate-float"
+            alt="Vinalytics - Drinks & Hospitality Analytics"
+            className="w-48 h-48 md:w-64 md:h-64 object-contain 
+opacity-60
+    drop-shadow-[0_0_40px_rgba(0,0,0,0.35)]
+  "
+
           />
         </motion.div>
 
@@ -56,7 +60,7 @@ const Index = () => {
           transition={{ duration: 1, delay: 0.3 }}
         >
           Something{" "}
-          <span className="text-gradient-gold italic">Exceptional</span>
+          <span className="text-gold italic">Exceptional</span>
           <br />
           is Brewing
         </motion.h1>
@@ -69,7 +73,7 @@ const Index = () => {
           transition={{ duration: 1, delay: 0.6 }}
         >
           Where the art of wine & drinks meets the science of data.
-          We're crafting powerful analytics for the beverage industry.
+          We're crafting powerful analytics for the drinks and hospitality industry.
         </motion.p>
 
         {/* Feature pills */}
@@ -80,7 +84,7 @@ const Index = () => {
           transition={{ duration: 1, delay: 0.9 }}
         >
           {[
-            { icon: Wine, label: "Beverage Intelligence" },
+            { icon: Wine, label: "Food & Drink Intelligence" },
             { icon: TrendingUp, label: "Market Insights" },
             { icon: BarChart3, label: "Data Analytics" },
           ].map(({ icon: Icon, label }) => (
@@ -88,7 +92,7 @@ const Index = () => {
               key={label}
               className="flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card/50 backdrop-blur-sm"
             >
-              <Icon className="w-4 h-4 text-accent" />
+              <Icon className="w-4 h-4 text-gold" />
               <span className="font-body text-sm text-foreground/80">{label}</span>
             </div>
           ))}
@@ -136,7 +140,7 @@ const Index = () => {
 
         {/* Decorative bottom line */}
         <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4"
+          className="mt-16 flex items-center gap-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.5 }}
@@ -148,16 +152,14 @@ const Index = () => {
           <div className="w-12 h-px bg-accent/30" />
         </motion.div>
       </div>
-    </div>
+    </div> 
   );
 };
 
 
-export default function App() {
-  return (
-    <main>
-      {/* your content */}
-    </main>
-  );
-}
+export default Index;
+ 
+
+
+
 
