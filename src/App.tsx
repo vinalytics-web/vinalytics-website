@@ -115,7 +115,7 @@ opacity-60
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full pl-10 pr-4 py-3 rounded-lg bg-input border border-border text-foreground font-body text-sm placeholder:text-gray-800 focus:outline-none focus:ring-2 focus:ring-ring/50 transition-all"
+                  className="w-full pl-10 pr-4 py-3 rounded-lg bg-input border border-border text-foreground font-body text-sm placeholder:text-muted-foreground/80 focus:outline-none focus:ring-2 focus:ring-ring/50 transition-all"
                 />
               </div>
               <button
