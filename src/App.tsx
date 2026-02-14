@@ -108,7 +108,7 @@ opacity-60
           {!submitted ? (
             <form onSubmit={handleSubmit} className="flex gap-2">
               <div className="relative flex-1">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/90" />
                 <input
                   type="email"
                   placeholder="Enter your email for updates"
