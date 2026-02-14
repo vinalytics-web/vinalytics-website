@@ -108,14 +108,14 @@ opacity-60
           {!submitted ? (
             <form onSubmit={handleSubmit} className="flex gap-2">
               <div className="relative flex-1">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/90" />
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-700" />
                 <input
                   type="email"
                   placeholder="Enter your email for updates"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full pl-10 pr-4 py-3 rounded-lg bg-input border border-border text-foreground font-body text-sm [&::placeholder]:!text-gray-900 focus:outline-none focus:ring-2 focus:ring-ring/50 transition-all"
+                  className="w-full pl-10 pr-4 py-3 rounded-lg bg-input border border-border text-foreground font-body text-sm [&::placeholder]:text-gray-700 focus:outline-none focus:ring-2 focus:ring-ring/50 transition-all"
                 />
               </div>
               <button
