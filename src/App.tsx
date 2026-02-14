@@ -115,12 +115,12 @@ opacity-60
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full pl-10 pr-4 py-3 rounded-lg bg-input border border-border text-foreground font-body text-sm [&::placeholder]:!text-gray-700 focus:outline-none focus:ring-2 focus:ring-ring/50 transition-all"
+                  className="w-full pl-10 pr-4 py-3 rounded-lg bg-input border border-border text-foreground font-body text-sm [&::placeholder]:!text-gray-900 focus:outline-none focus:ring-2 focus:ring-ring/50 transition-all"
                 />
               </div>
               <button
                 type="submit"
-                className="px-6 py-3 rounded-lg bg-gradient-wine text-primary-foreground font-body font-medium text-sm hover:opacity-50 transition-opacity shadow-wine-glow"
+                className="px-6 py-3 rounded-lg bg-gradient-wine text-primary-foreground font-body font-medium text-sm hover:opacity-90 transition-opacity shadow-wine-glow"
               >
                 Notify Me
               </button>
