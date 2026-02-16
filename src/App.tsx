@@ -9,12 +9,13 @@ import vinalyticsLogo from "@/assets/vinalytics-logo.png";
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xwvnbpdp";
 const Index = () => {
   const [email, setEmail] = useState("");
+  const [company, setCompany] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "sending" | "error">("idle");
 
  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
-  if (!email) return;
+  if (!email || !company) return;
 
   setSubmitStatus("sending");
 
@@ -27,6 +28,7 @@ const Index = () => {
       },
       body: JSON.stringify({
         email,
+		company,
         source: "Vinalytics landing page interest form",
       }),
     });
@@ -34,6 +36,7 @@ const Index = () => {
     if (res.ok) {
       setSubmitted(true);
       setEmail("");
+	  setCompany("");
       setSubmitStatus("idle");
     } else {
       setSubmitStatus("error");
@@ -131,8 +134,23 @@ opacity-60
           transition={{ duration: 1, delay: 1.2 }}
         >
           {!submitted ? (
-            <form onSubmit={handleSubmit} className="flex gap-2">
-              <div className="relative flex-1">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-2">
+              
+			  {/* Business name text box*/}
+				<div className="relative flex-1">
+				  <input
+					type="text"
+					name="company"
+					placeholder="Business Name"
+					value={company}
+					onChange={(e) => setCompany(e.target.value)}
+					required
+					className="w-full px-4 py-3 rounded-lg bg-input border border-border text-foreground font-body text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring/50 transition-all"
+				  />
+				</div>
+
+				{/* Email text box*/}
+			  <div className="relative flex-1">
                 <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                 <input
                   type="email"
