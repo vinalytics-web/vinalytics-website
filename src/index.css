@@ -8,17 +8,14 @@
 :root {
   /* Global text colors */
   --foreground: 255 255 255;        /* white */
-  --muted-foreground: 120 120 120;  /* neutral gray */
-
+  --muted-foreground: 110 110 110;  /* neutral gray */
 
   /* Button text */
   --primary-foreground: 255 255 255;   /* white text on gold buttons */
-}
-
- 
+  
 /* Solid gold text utility (for highlights & icons only) */
 .text-gold {
   color: rgb(235 200 135);
 }
-
+}
 
