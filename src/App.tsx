@@ -100,8 +100,8 @@ opacity-60
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
         >
-          Where the art of wine & drinks meets the science of data.
-          We're crafting powerful analytics for the drinks and hospitality industry.
+          Uncorking insights.
+          Specialist analytics designed for the drinks and hospitality sector.
         </motion.p>
 
         {/* Feature pills */}
@@ -112,7 +112,7 @@ opacity-60
           transition={{ duration: 1, delay: 0.9 }}
         >
           {[
-            { icon: Wine, label: "Food & Drink Intelligence" },
+            { icon: Wine, label: "Data & AI Strategy" },
             { icon: TrendingUp, label: "Market Insights" },
             { icon: BarChart3, label: "Data Analytics" },
           ].map(({ icon: Icon, label }) => (
@@ -192,7 +192,7 @@ opacity-60
       animate={{ opacity: 1, scale: 1 }}
     >
       <p className="text-accent font-body font-medium text-foreground">
-        ✓ You're on the list. We'll be in touch soon.
+        ✓ Thank you. We'll be in touch soon.
       </p>
     </motion.div>
   )}
