@@ -67,7 +67,7 @@ opacity-60
 
         {/* Subtitle */}
         <motion.p
-          className="font-body text-lg md:text-xl text-muted-foreground text-center max-w-2xl mb-4 font-light"
+          className="font-body text-lg md:text-xl text-foreground text-center max-w-2xl mb-4 font-light"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
@@ -146,7 +146,7 @@ opacity-60
           transition={{ duration: 1, delay: 1.5 }}
         >
           <div className="w-12 h-px bg-accent/30" />
-          <span className="font-body text-xs text-muted-foreground tracking-[0.2em] uppercase">
+          <span className="font-body text-xs text-foreground tracking-[0.2em] uppercase">
             Coming Soon
           </span>
           <div className="w-12 h-px bg-accent/30" />
