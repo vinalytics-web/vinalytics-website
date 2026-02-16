@@ -7,16 +7,41 @@ import heroBg from "@/assets/hero-bg.jpg";
 import vinalyticsLogo from "@/assets/vinalytics-logo.png";
 
 const Index = () => {
+	const FORMSPREE_ENDPOINT = "https://formspree.io/f/xwvnbpdp"; 
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "sending" | "error">("idle");
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (email) {
+ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  if (!email) return;
+
+  setSubmitStatus("sending");
+
+  try {
+    const res = await fetch(FORMSPREE_ENDPOINT, {
+      method: "POST",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        source: "Vinalytics landing page interest form",
+      }),
+    });
+
+    if (res.ok) {
       setSubmitted(true);
       setEmail("");
+      setSubmitStatus("idle");
+    } else {
+      setSubmitStatus("error");
     }
-  };
+  } catch {
+    setSubmitStatus("error");
+  }
+};
 
   return (
     <div className="relative min-h-screen bg-gradient-dark overflow-hidden">
@@ -111,6 +136,7 @@ opacity-60
                 <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                 <input
                   type="email"
+				  name="email"
                   placeholder="Enter your email for updates"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -120,23 +146,35 @@ opacity-60
               </div>
               <button
                 type="submit"
-                className="px-6 py-3 rounded-lg bg-gradient-wine text-foreground font-body font-medium text-sm hover:opacity-90 transition-opacity shadow-wine-glow"
-              >
-                Notify Me
-              </button>
-            </form>
-          ) : (
-            <motion.div
-              className="text-center py-3"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-            >
-              <p className="text-accent font-body font-medium text-foreground">
-                ✓ You're on the list. We'll be in touch soon.
-              </p>
-            </motion.div>
-          )}
-        </motion.div>
+				disabled={submitStatus === "sending"}
+                className="px-6 py-3 rounded-lg bg-gradient-wine text-foreground font-body font-medium text-sm hover:opacity-90 transition-opacity shadow-wine-glow disabled:cursor-not-allowe"
+              
+>
+        {submitStatus === "sending" ? "Sending..." : "Notify Me"}
+      </button>
+
+      {/* Optional bot trap (simple spam reduction) */}
+      <input type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" />
+    </form>
+  ) : (
+    <motion.div
+      className="text-center py-3"
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+    >
+      <p className="text-accent font-body font-medium text-foreground">
+        ✓ You're on the list. We'll be in touch soon.
+      </p>
+    </motion.div>
+  )}
+
+  {submitStatus === "error" && !submitted && (
+    <p className="mt-3 text-sm text-red-200 font-body text-center">
+      Sorry — something went wrong. Please try again.
+    </p>
+  )}
+</motion.div>
+
 
         {/* Decorative bottom line */}
         <motion.div
