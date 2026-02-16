@@ -145,8 +145,8 @@ opacity-60
 					value={company}
 					onChange={(e) => setCompany(e.target.value)}
 					required
-					className="w-full px-4 py-3 rounded-lg bg-input border border-border text-foreground font-body text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring/50 transition-all"
-				  />
+					className="w-full pl-10 pr-4 py-3 rounded-lg bg-input border border-border text-muted-foreground font-body text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring/50 transition-all"
+                />
 				</div>
 
 				{/* Email text box*/}
