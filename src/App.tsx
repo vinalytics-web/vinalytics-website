@@ -101,6 +101,7 @@ opacity-60
           transition={{ duration: 1, delay: 0.6 }}
         >
           Uncorking insights.
+		  <br />
           Specialist analytics designed for the drinks and hospitality sector.
         </motion.p>
 
