@@ -9,6 +9,7 @@
   /* Global text colors */
   --foreground: 255 255 255;        /* white */
   --muted-foreground: 120 120 120;  /* neutral gray */
+  --muted-secondary-text: 220 220 220; /* muted white */
 
   /* Button text */
   --primary-foreground: 255 255 255;   /* white text on gold buttons */

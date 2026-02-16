@@ -67,7 +67,7 @@ opacity-60
 
         {/* Subtitle */}
         <motion.p
-          className="font-body text-lg md:text-xl text-muted-foreground text-center max-w-2xl mb-4 font-light"
+          className="font-body text-lg md:text-xl text-muted-secondary-text text-center max-w-2xl mb-4 font-light"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
