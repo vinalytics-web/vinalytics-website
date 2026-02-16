@@ -8,7 +8,7 @@
 :root {
   /* Global text colors */
   --foreground: 255 255 255;        /* white */
-  --muted-foreground: 110 110 110;  /* soft white / med grey */
+  --muted-foreground: 120 120 120;  /* neutral gray */
 
   /* Button text */
   --primary-foreground: 255 255 255;   /* white text on gold buttons */
