@@ -6,8 +6,8 @@ import DataParticles from "@/components/DataParticles";
 import heroBg from "@/assets/hero-bg.jpg";
 import vinalyticsLogo from "@/assets/vinalytics-logo.png";
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xwvnbpdp";
 const Index = () => {
-	const FORMSPREE_ENDPOINT = "https://formspree.io/f/xwvnbpdp"; 
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "sending" | "error">("idle");
@@ -147,7 +147,7 @@ opacity-60
               <button
                 type="submit"
 				disabled={submitStatus === "sending"}
-                className="px-6 py-3 rounded-lg bg-gradient-wine text-foreground font-body font-medium text-sm hover:opacity-90 transition-opacity shadow-wine-glow disabled:cursor-not-allowe"
+                className="px-6 py-3 rounded-lg bg-gradient-wine text-foreground font-body font-medium text-sm hover:opacity-90 transition-opacity shadow-wine-glow disabled:opacity-60 disabled:cursor-not-allowed"
               
 >
         {submitStatus === "sending" ? "Sending..." : "Notify Me"}
