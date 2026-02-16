@@ -14,6 +14,12 @@
   /* Button text */
   --primary-foreground: 255 255 255;   /* white text on gold buttons */
 }
+
+/* Muted secondary text utility */
+.text-muted-secondary {
+  color: rgb(var(--muted-secondary));
+}
+
  
 /* Solid gold text utility (for highlights & icons only) */
 .text-gold {
