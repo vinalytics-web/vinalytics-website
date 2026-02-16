@@ -146,7 +146,7 @@ opacity-60
           transition={{ duration: 1, delay: 1.5 }}
         >
           <div className="w-12 h-px bg-accent/30" />
-          <span className="font-body text-xs text-foreground tracking-[0.2em] uppercase">
+          <span className="font-body text-xs text-muted-foreground tracking-[0.2em] uppercase">
             Coming Soon
           </span>
           <div className="w-12 h-px bg-accent/30" />
