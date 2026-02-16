@@ -100,9 +100,9 @@ opacity-60
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
         >
-          Uncorking insights.
+          Uncorking Insights
 		  <br />
-          Specialist analytics designed for the drinks and hospitality sector.
+          Specialist analytics designed for the drinks and hospitality sector
         </motion.p>
 
         {/* Feature pills */}
