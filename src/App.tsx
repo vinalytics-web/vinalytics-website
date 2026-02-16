@@ -120,7 +120,7 @@ opacity-60
               </div>
               <button
                 type="submit"
-                className="px-6 py-3 rounded-lg bg-gradient-wine text-primary-foreground font-body font-medium text-sm hover:opacity-90 transition-opacity shadow-wine-glow"
+                className="px-6 py-3 rounded-lg bg-gradient-wine font-body font-medium text-sm hover:opacity-90 transition-opacity shadow-wine-glow"
               >
                 Notify Me
               </button>
@@ -131,7 +131,7 @@ opacity-60
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
             >
-              <p className="text-accent font-body font-medium">
+              <p className="text-accent font-body font-medium text-foreground">
                 ✓ You're on the list. We'll be in touch soon.
               </p>
             </motion.div>
