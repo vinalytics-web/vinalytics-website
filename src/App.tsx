@@ -125,6 +125,16 @@ opacity-60
             </div>
           ))}
         </motion.div>
+		
+		{/* email sign up Subtitle */}
+        <motion.p
+          className="font-body text-lg md:text-xl text-foreground text-center max-w-2xl mb-4 font-light"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.6 }}
+        >
+          Interested? Enter your details:
+        </motion.p>
 
         {/* Email Signup */}
         <motion.div
@@ -138,6 +148,7 @@ opacity-60
               
 			  {/* Business name text box*/}
 				<div className="relative flex-1">
+				<Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
 				  <input
 					type="text"
 					name="company"
@@ -155,7 +166,7 @@ opacity-60
                 <input
                   type="email"
 				  name="email"
-                  placeholder="Enter your email for updates"
+                  placeholder="Email Address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
