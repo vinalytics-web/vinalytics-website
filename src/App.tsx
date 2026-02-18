@@ -61,7 +61,7 @@ const Index = () => {
       <DataParticles />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-screen px-6 pt-10 overflow-hidden">
+      <div className="relative z-10 flex flex-col items-center m-h-screen lg:h-screen px-6 pt-10 overflow-visible lg:overflow-hidden">
         {/* Logo / Brand Icons */}
         <motion.div
           className="mb-4"
