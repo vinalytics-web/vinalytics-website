@@ -145,7 +145,7 @@ opacity-60
           transition={{ duration: 1, delay: 1.2 }}
         >
           {!submitted ? (
-            <form onSubmit={handleSubmit} className="flex flex-col gap-2">
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
               
 			  {/* Business name text box*/}
 				<div className="relative flex-1">
@@ -175,13 +175,24 @@ opacity-60
                 />
               </div>
               <button
-                type="submit"
-				disabled={submitStatus === "sending"}
-                className="px-6 py-3 rounded-lg bg-gradient-wine text-foreground font-body font-medium text-sm hover:opacity-90 transition-opacity shadow-wine-glow disabled:opacity-60 disabled:cursor-not-allowed"
-              
+  type="submit"
+  disabled={submitStatus === "sending"}
+  className="
+    px-6 py-3
+    rounded-lg
+    bg-gradient-wine
+    text-white
+    font-body font-semibold text-sm
+    shadow-lg
+    hover:opacity-90
+    focus:outline-none focus:ring-2 focus:ring-ring/50
+    transition-all
+    disabled:opacity-60 disabled:cursor-not-allowed
+    whitespace-nowrap
+  "
 >
-        {submitStatus === "sending" ? "Sending..." : "Notify Me"}
-      </button>
+  {submitStatus === "sending" ? "Sending..." : "Notify Me"}
+</button>
 
       {/* Optional bot trap (simple spam reduction) */}
       <input type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" />
@@ -219,7 +230,7 @@ opacity-60
     rel="noopener noreferrer"
     className="underline underline-offset-4 hover:opacity-90 transition-opacity text-foreground"
   >
-    Take our industry survey
+    Click here to take our industry survey
   </a>
 </motion.p>
 
