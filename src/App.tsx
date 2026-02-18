@@ -139,7 +139,7 @@ opacity-60
 
         {/* Email Signup */}
         <motion.div
-          className="w-full max-w-md"
+          className="w-full max-w-xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.2 }}
@@ -178,14 +178,16 @@ opacity-60
   type="submit"
   disabled={submitStatus === "sending"}
   className="
-    px-6 py-3
+	px-7 py-3
     rounded-lg
     bg-gradient-wine
     text-white
     font-body font-semibold text-sm
-    shadow-lg
-    hover:opacity-90
-    focus:outline-none focus:ring-2 focus:ring-ring/50
+    shadow-lg shadow-black/20
+    border border-white/10
+    hover:opacity-95 hover:shadow-xl
+    active:scale-[0.99]
+    focus:outline-none focus:ring-2 focus:ring-ring/60
     transition-all
     disabled:opacity-60 disabled:cursor-not-allowed
     whitespace-nowrap
