@@ -129,7 +129,7 @@ opacity-60
 		
 		{/* Email Signup */}
 <motion.div
-  className="w-full max-w-5xl"
+  className="w-full max-w-4xl"
   initial={{ opacity: 0, y: 12 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 1, delay: 1.2 }}
