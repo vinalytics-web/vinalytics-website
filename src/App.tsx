@@ -47,7 +47,7 @@ const Index = () => {
 };
 
   return (
-    <div className="relative min-h-screen bg-gradient-dark overflow-hidden">
+    <div className="relative bg-gradient-dark overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0">
         <img
@@ -61,18 +61,18 @@ const Index = () => {
       <DataParticles />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6">
+      <div className="relative z-10 flex flex-col items-center justify-center h-screen px-6 pt-10 overflow-hidden">
         {/* Logo / Brand Icons */}
         <motion.div
-          className="mb-8"
-          initial={{ opacity: 0, y: -20 }}
+          className="mb-4"
+          initial={{ opacity: 0, y: -12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           <img
             src={vinalyticsLogo}
-            alt="Vinalytics - Drinks & Hospitality Analytics"
-            className="w-48 h-48 md:w-64 md:h-64 object-contain 
+            alt="Vinalytics - Food, Drink & Hospitality Analytics"
+            className="w-40 h-40 md:w-52 md:h-52 object-contain 
 opacity-60
     drop-shadow-[0_0_40px_rgba(0,0,0,0.35)]
   "
@@ -82,8 +82,8 @@ opacity-60
 
         {/* Main Heading */}
         <motion.h1
-          className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-foreground text-center leading-tight mb-6"
-          initial={{ opacity: 0, y: 30 }}
+          className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-foreground text-center leading-tight mb-4"
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
@@ -102,12 +102,12 @@ opacity-60
         >
           Uncorking Insights
 		  <br />
-          Specialist analytics designed for the drinks and hospitality sector
+          Specialist analytics designed for the food, drink and hospitality sector
         </motion.p>
 
         {/* Feature pills */}
         <motion.div
-          className="flex flex-wrap justify-center gap-3 mb-12"
+          className="flex flex-wrap justify-center gap-3 mb-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.9 }}
@@ -127,88 +127,91 @@ opacity-60
           ))}
         </motion.div>
 		
-		{/* email sign up Subtitle */}
-        <motion.p
-          className="font-body text-lg md:text-xl text-foreground text-center max-w-2xl mb-4 font-light"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.6 }}
-        >
-          Interested? Enter your details:
-        </motion.p>
-
-        {/* Email Signup */}
-        <motion.div
-          className="w-full max-w-xl"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.2 }}
-        >
-          {!submitted ? (
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
-              
-			  {/* Business name text box*/}
-				<div className="relative flex-1">
-				<Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-				  <input
-					type="text"
-					name="company"
-					placeholder="Business Name"
-					value={company}
-					onChange={(e) => setCompany(e.target.value)}
-					required
-					className="w-full pl-10 pr-4 py-3 rounded-lg bg-input border border-border text-muted-foreground font-body text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring/50 transition-all"
-                />
-				</div>
-
-				{/* Email text box*/}
-			  <div className="relative flex-1">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                <input
-                  type="email"
-				  name="email"
-                  placeholder="Email Address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="w-full pl-10 pr-4 py-3 rounded-lg bg-input border border-border text-muted-foreground font-body text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring/50 transition-all"
-                />
-              </div>
-              <button
-  type="submit"
-  disabled={submitStatus === "sending"}
-  className="
-	px-7 py-3
-    rounded-lg
-    bg-gradient-wine
-    text-white
-    font-body font-semibold text-sm
-    shadow-lg shadow-black/20
-    border border-white
-    hover:opacity-95 hover:shadow-xl
-    active:scale-[0.99]
-    focus:outline-none focus:ring-2 focus:ring-ring/60
-    transition-all
-    disabled:opacity-60 disabled:cursor-not-allowed
-    whitespace-nowrap
-  "
+		{/* Email Signup */}
+<motion.div
+  className="w-full max-w-5xl"
+  initial={{ opacity: 0, y: 12 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1, delay: 1.2 }}
 >
-  {submitStatus === "sending" ? "Sending..." : "Notify Me"}
-</button>
+  {!submitted ? (
+    <div className="flex flex-col md:flex-row md:items-center gap-3">
+      
+      {/* Inline label */}
+      <span className="font-body text-sm md:text-base text-foreground md:whitespace-nowrap md:w-54 shrink-0">
+        Interested? Enter your details:
+      </span>
 
-      {/* Optional bot trap (simple spam reduction) */}
-      <input type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" />
-    </form>
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col sm:flex-row gap-3 flex-1 items-stretch"
+      >
+        {/* Business name */}
+        <div className="relative flex-[2]">
+          <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+          <input
+            type="text"
+            name="company"
+            placeholder="Business Name"
+            value={company}
+            onChange={(e) => setCompany(e.target.value)}
+            required
+            className="w-full pl-10 pr-4 py-3 rounded-lg bg-input border border-border text-muted-foreground font-body text-sm focus:outline-none focus:ring-2 focus:ring-ring/50"
+          />
+        </div>
+
+        {/* Email */}
+        <div className="relative flex-[2]">
+          <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            className="w-full pl-10 pr-4 py-3 rounded-lg bg-input border border-border text-muted-foreground font-body text-sm focus:outline-none focus:ring-2 focus:ring-ring/50"
+          />
+        </div>
+
+        {/* Button */}
+        <button
+          type="submit"
+          disabled={submitStatus === "sending"}
+          className="
+            px-7 py-3 rounded-lg
+            bg-gradient-wine text-white
+            font-body font-semibold text-sm
+            shadow-lg shadow-black/20
+			border border-white
+            hover:opacity-95 hover:shadow-xl
+            active:scale-[0.99]
+            focus:outline-none focus:ring-2 focus:ring-ring/60
+            transition-all
+            disabled:opacity-60 disabled:cursor-not-allowed
+            whitespace-nowrap shrink-0
+          "
+        >
+          {submitStatus === "sending" ? "Sending..." : "Notify Me"}
+        </button>
+
+        {/* Bot trap */}
+        <input
+          type="text"
+          name="_gotcha"
+          className="hidden"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </form>
+    </div>
   ) : (
-    <motion.div
-      className="text-center py-3"
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-    >
+    <motion.div className="text-center py-3">
       <p className="text-accent font-body font-medium text-foreground">
         ✓ Thank you. We'll be in touch soon.
       </p>
     </motion.div>
+ 
   )}
 
   {submitStatus === "error" && !submitted && (
@@ -220,7 +223,7 @@ opacity-60
 
 {/* Survey link */}
 <motion.p
-  className="mt-6 text-center"
+  className="mt-4 text-center"
   initial={{ opacity: 0, y: 6 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.6, delay: 0.2 }}
@@ -230,7 +233,14 @@ opacity-60
     href="https://forms.office.com/r/pKvCXfpbMs"
     target="_blank"
     rel="noopener noreferrer"
-    className="underline underline-offset-4 hover:opacity-90 transition-opacity text-foreground"
+    className="
+underline underline-offset-4
+  decoration-2
+  decoration-gold
+  hover:opacity-90
+  transition-opacity
+  text-foreground
+"
   >
     Click here to take our industry survey
   </a>
@@ -241,7 +251,7 @@ opacity-60
 
         {/* Decorative bottom line */}
         <motion.div
-          className="mt-16 flex items-center gap-4"
+          className="mt-6 flex items-center gap-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.5 }}
