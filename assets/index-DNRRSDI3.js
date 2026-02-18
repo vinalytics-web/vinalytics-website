@@ -16,7 +16,7 @@ opacity-60
     text-white
     font-body font-semibold text-sm
     shadow-lg shadow-black/20
-    border border-white/10
+    border border-white
     hover:opacity-95 hover:shadow-xl
     active:scale-[0.99]
     focus:outline-none focus:ring-2 focus:ring-ring/60
