@@ -61,7 +61,7 @@ const Index = () => {
       <DataParticles />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center m-h-screen lg:h-screen px-6 pt-10 overflow-visible lg:overflow-hidden">
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen lg:h-screen px-6 pt-10 pb-20 overflow-visible lg:overflow-hidden">
         {/* Logo / Brand Icons */}
         <motion.div
           className="mb-4"
@@ -221,49 +221,32 @@ opacity-60
   )}
 </motion.div>
 
-{/* Survey link */}
-<motion.p
-  className="mt-4 text-center"
-  initial={{ opacity: 0, y: 6 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6, delay: 0.2 }}
->
-
-<a
-    href="https://forms.office.com/r/pKvCXfpbMs"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="
-underline underline-offset-4
-  decoration-2
-  decoration-gold
-  hover:opacity-90
-  transition-opacity
-  text-foreground
-"
+{/* Bottom-anchored survey link (no decorative line) */}
+<div className="absolute bottom-6 inset-x-0 flex justify-center px-6">
+  <motion.p
+    className="text-center"
+    initial={{ opacity: 0, y: 6 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, delay: 0.2 }}
   >
-    Click here to take our industry survey
-  </a>
-</motion.p>
-
-
-
-
-        {/* Decorative bottom line */}
-        <motion.div
-          className="mt-6 flex items-center gap-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.5 }}
-        >
-          <div className="w-12 h-px bg-accent/30" />
-          <span className="font-body text-xs text-foreground tracking-[0.2em] uppercase">
-            Coming Soon
-          </span>
-          <div className="w-12 h-px bg-accent/30" />
-        </motion.div>
-      </div>
-    </div> 
+    <a
+      href="https://forms.office.com/r/pKvCXfpbMs"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="
+        underline underline-offset-4
+        decoration-2 decoration-gold
+        hover:opacity-90
+        transition-opacity
+        text-foreground
+      "
+    >
+      Click here to take our industry survey
+    </a>
+  </motion.p>
+		</div>
+   </div> 
+</div> 
   );
 };
 
