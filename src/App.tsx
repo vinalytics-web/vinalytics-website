@@ -212,20 +212,17 @@ opacity-60
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.6, delay: 0.2 }}
 >
-  <p className="font-body text-sm text-foreground">
-    Take our industry survey:
-   
-</p>
 
-  <div className="w-full max-w-3xl mx-auto">
-    <iframe
-      src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__nrOdcNUNlBPMkxJMFZQUks5SlM3RjhPS1JDTU1PNC4u&embed=true"
-      className="w-full rounded-lg"
-      style={{ border: "none", height: "70vh", maxHeight: "100vh" }}
-      allowFullScreen
-    />
-  </div>
-</motion.div>
+<a
+    href="https://forms.office.com/r/pKvCXfpbMs"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="underline underline-offset-4 hover:opacity-90 transition-opacity"
+  >
+    Take our industry survey
+  </a>
+</motion.p>
+
 
 
 
