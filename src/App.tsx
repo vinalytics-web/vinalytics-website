@@ -206,7 +206,7 @@ opacity-60
 </motion.div>
 
 {/* Survey link */}
-<motion.div
+<motion.p
   className="mt-6 text-center"
   initial={{ opacity: 0, y: 6 }}
   animate={{ opacity: 1, y: 0 }}
