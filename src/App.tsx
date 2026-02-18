@@ -217,7 +217,7 @@ opacity-60
     href="https://forms.office.com/r/pKvCXfpbMs"
     target="_blank"
     rel="noopener noreferrer"
-    className="underline underline-offset-4 hover:opacity-90 transition-opacity"
+    className="underline underline-offset-4 hover:opacity-90 transition-opacity text-foreground"
   >
     Take our industry survey
   </a>
